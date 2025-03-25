@@ -150,14 +150,6 @@ server.tool("get-forecast", "Get weather forecast for a location", {
         ],
     };
 });
-// Add a simple echo tool
-server.tool("echo", { message: z.string() }, async ({ message }) => ({
-    content: [{ type: "text", text: `Echo: ${message}` }]
-}));
-// Add a simple addition tool
-server.tool("add", { a: z.number(), b: z.number() }, async ({ a, b }) => ({
-    content: [{ type: "text", text: String(a + b) }]
-}));
 async function main() {
     const transport = new StdioServerTransport();
     await server.connect(transport);

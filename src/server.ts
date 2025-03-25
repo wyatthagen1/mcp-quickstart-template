@@ -83,6 +83,9 @@ interface ForecastResponse {
 }
 
 // Register weather tools
+
+
+
 server.tool(
   "get-alerts",
   "Get weather alerts for a state",
@@ -213,24 +216,6 @@ server.tool(
       ],
     };
   },
-);
-
-
-// Add a simple echo tool
-server.tool(
-  "echo",
-  { message: z.string() },
-  async ({ message }) => ({
-    content: [{ type: "text", text: `Echo: ${message}` }]
-  })
-);
-
-// Add a simple addition tool
-server.tool("add",
-  { a: z.number(), b: z.number() },
-  async ({ a, b }) => ({
-    content: [{ type: "text", text: String(a + b) }]
-  })
 );
 
 

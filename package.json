@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js ./dist/server.js",
+    "start": "npx @modelcontextprotocol/inspector && node ./dist/server.js && tail -n 20 -F ~/Library/Logs/Claude/mcp*.log",
     "dev": "ts-node src/index.ts",
     "test": "jest"
   },
